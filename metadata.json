@@ -1,0 +1,6 @@
+{
+  "name": "Social App",
+  "description": "Social App v.30.7: A production-ready mobile application featuring zero-cost OTP authentication, dynamic profile creation, pure blank-slate feeds, reels, instant chat, Google Drive cloud integration for media and backups, RTL localization, and a screen-aware multilingual AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
