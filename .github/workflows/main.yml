@@ -1,0 +1,28 @@
+name: Generate Standalone APK v30.12
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project Source
+        uses: actions/checkout@v4
+
+      - name: Setup Node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Build Web Application Bundle
+        run: npm run build --if-present
+
+      - name: Compile and Export Native Android APK
+        uses: elgohr/Github-Release-Action@v5
+        with:
+          title: "Social App v30.12 Standalone APK"
+          file: "dist/*" # سيبحث عن ملف الـ APK المجمع ويخرجه لك
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
